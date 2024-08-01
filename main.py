@@ -30,6 +30,18 @@ def add_time(start, duration, day_of_week=None):
     elif days_later > 1:
         days_later_str = f' ({days_later} days later)'
     
+    # If days of week is given, calculate the end day of the week
+    if day_of_week is not None:
+        days_of_week = [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+            "Sunday"
+        ]
+        day_of_week_index = days_of_week.index(day_of_week.capitalize())
+        end_day_of_week_index = (day_of_week_index + days_later) % 7
+        end_day_of_week = days_of_week[end_day_of_week_index]
+        return f"{end_hour}:{end_minute:02d} {end_am_pm}, {end_day_of_week}{days_later_str}"
+    else:
+        return f"{end_hour}:{end_minute:02d} {end_am_pm}{days_later_str}"
     
 
 # Examples
