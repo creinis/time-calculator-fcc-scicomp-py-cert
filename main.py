@@ -15,6 +15,12 @@ def add_time(start, duration, day_of_week=None):
     end_hour, end_minute = divmod(end_minutes, 60)
     end_hour %= 24
     
+    # Determine Am or PM
+    end_am_pm = 'AM' if end_hour < 12 else 'PM'
+    if end_hour > 12:
+        end_hour -= 12
+    elif end_hour == 0:
+        end_hour = 12
 
 
 # Examples
