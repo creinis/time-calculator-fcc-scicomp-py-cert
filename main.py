@@ -1,6 +1,11 @@
 
 def add_time(start, duration, day_of_week=None):
-    pass
+    # Convert start time to minutes
+  start_hour, start_minute = map(int, start[:-3].split(':'))
+  if start[-2:] == 'PM':
+    start_hour += 12
+  start_minutes = start_hour * 60 + start_minute
+  
 
 # Examples
 print(add_time("3:00 PM", "3:10"))
