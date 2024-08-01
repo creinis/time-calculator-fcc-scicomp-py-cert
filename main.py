@@ -1,5 +1,5 @@
 
-def add_time():
+def add_time(start, duration, day_of_week=None):
     pass
 
 # Examples
