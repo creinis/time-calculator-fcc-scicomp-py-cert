@@ -22,6 +22,15 @@ def add_time(start, duration, day_of_week=None):
     elif end_hour == 0:
         end_hour = 12
 
+    # Calculate the number of days later
+    days_later = end_minutes // (24 * 60)
+    days_later_str = ''
+    if days_later == 1:
+        days_later_str = ' (next day)'
+    elif days_later > 1:
+        days_later_str = f' ({days_later} days later)'
+    
+    
 
 # Examples
 print(add_time("3:00 PM", "3:10"))
