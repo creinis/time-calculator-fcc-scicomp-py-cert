@@ -10,6 +10,11 @@ def add_time(start, duration, day_of_week=None):
     duration_hour, duration_minute = map(int, duration.split(':'))
     duration_minutes = duration_hour * 60 + duration_minute
     
+    # Calculate the end time in minutes and convert back to hour and minutes
+    end_minutes = start_minutes + duration_minutes
+    end_hour, end_minute = divmod(end_minutes, 60)
+    end_hour %= 24
+    
 
 
 # Examples
